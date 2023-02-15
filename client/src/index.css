@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+span,button,div{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* h1,h2,h3,h4,h5,h6,p{
+    --max-lines: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+} */
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.sidebar-btn{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    background-color: black;
+    color: gray;
+    margin-bottom: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: all 0.1s ease-in;
+    position: relative;
+}
+span{
+    transition: all 0.1s ease-in;
+}
+.sidebar-btn:hover span{
+    color: white !important;
+}
+.sidebar-btn:hover{
+    color: #fff;
+}
+
+.sign-up{
+    background-color: #101010;
+    border: none;
+    color: #e3e3e3;
+    margin: auto 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.sign-up:hover{
+    color: white;
+    background-color: #000;
+}
+
+.log-in{
+    background-color: #e3e3e3;
+    margin: auto 0;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.log-in:hover{
+    background-color: white;
+    padding: 11px 28px;
+    margin-left: -3px;
+    margin-right: -3px;
+}
+
+.upgrade{
+    background-color: #000;
+    border-radius: 20px;
+    width: 80px;
+    height: 30px;
+    border: 1px solid gray;
+    margin: auto 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 13px 45px;
+}
+.upgrade:hover{
+    border: 1px solid white;
+    padding: 15px 48px;
+    margin-right: 22px;
+}
+
+.playlists-box{
+    background-color: #000;
+    transition: background-color 0.2s ease-in;
+    transition-delay: 1.5s;
+}
+.playlists-box:hover{
+    background-color: rgba(200, 200, 200,0.4);
+    transition-delay: 0s;
+}
+::-webkit-scrollbar{
+    width: 12px;
+    background-color: #000;
+    margin-right: 2px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: inherit;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(230, 230, 230,0.6);
+}
+::-webkit-scrollbar-thumb:active{
+    background-color: rgba(230, 230, 230,0.8);
+}
+
+.profile-btn{
+    border-radius: 20px; 
+    height: '27px';
+    color: white;
+    align-items: center;
+    display: flex;
+    padding: 0;
+    border: 0;
+    padding-right: 0.5;
+    background-color: #0a0a0a;
+    transition: all 0.2s ease-in;
+}
+.profile-btn:hover{
+    background-color: #595959;
+}
+
+
+.library-btn{
+    padding: 5px 8px;
+    cursor: pointer;
+    height: 40px;
+    margin-right: 20px;
+    width: 80px;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+
+.like-card{
+    background: radial-gradient(circle at right bottom, #8d8de5 , #460bf5);
+    transition: all 0.3s;
+}
+.like-card span{
+    opacity: 0;
+    transition: all 0.4s;
+}
+.like-card:hover span{
+    opacity: 1;
+    top: -70px !important;
+}
+
+
+.play-card{
+    background-color: #181818;
+    transition: all 0.3s;
+}
+.play-card:hover{
+    background-color: #2b2c2e;
+}
+.play-card span{
+    opacity: 0;
+    transition: all 0.4s;
+}
+.play-card:hover span{
+    opacity: 1;
+    top: 140px !important;
+}
+.library-card{
+    background-color: #2b2c2e;
+    transition: all 0.3s;
+}
+.library-card:hover{
+    background-color: rgba(89, 89, 89,0.6);
+}
+.library-card span{
+    opacity: 0;
+    transition: all 0.4s;
+}
+.library-card:hover span{
+    opacity: 1;
+    top: -160px !important;
+}
+.library-play-pause-btn:hover{
+    font-size: 33px;
+}
+.library-play-pause-btn:active{
+    background-color: #139e44;
+    font-size: 30px;
+    margin-right: 0px;
+}
+
+@media (max-width:900px) {
+    .library-btn-img{
+        height: 60px !important;
+    }
+    .library-play-pause-btn{
+        font-size: 20px !important;
+    }
+    .library-play-pause-btn:hover{
+        font-size: 22px !important;
+        margin-right: -1px !important;
+    }
+    .library-play-pause-btn:active{
+        font-size: 20px !important;
+        margin-right: 0px !important;
+    }
+}
+
+
+
+.not-logged-in-popup {
+    width: 300px;
+    left: 170px;
+    background-color: #0d72ea;
+    border-radius: 8px;
+    color: #fff;
+    padding: 15px 20px;
+    position: absolute;
+    z-index: 99;
+    white-space: normal;
+    overflow: visible;
+    transition: all 0.3s;
+}  
+.not-logged-in-popup:after {
+    content: " ";
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #0d72ea;
+    border-left: none;
+    border-bottom: 15px solid transparent;
+}
+.not-now-sidebar-btn{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 7px 13px;
+    border-radius: 20px;
+    margin: 5px;
+}
+.not-now-sidebar-btn:hover{
+    font-size: 15px;
+    margin: 4px 3px;
+}
+.log-in-sidebar-btn{
+    background-color: white;
+    border: none;
+    padding: 7px 13px;
+    margin-left: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+}
+.log-in-sidebar-btn:hover{
+    padding: 9px 16px;
+    margin: 3px 2px;
+}
+
+.login-btn{
+    background-color: #1ed760;
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+.login-btn:hover{
+    width: 420px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-bottom: 35px;
+    margin-top: -5px;
+    background-color: #1fe565;
+}
+.login-btn:active{
+    border: 3px solid black;
+    background-color: #139e44;
+}
+.signup-btn{
+    margin-top: 30px;
+    width: 400px;
+    border-radius: 20px;
+    border: 1px solid #a5a5a5;
+    background-color: white;
+    color: #6a6a6a;
+    font-weight: bold;
+    height: 40px;
+    font-size: 16px;
+}
+.signup-btn:hover{
+    border: 1px solid black;
+}
+.signup-btn:active{
+    border: 3px solid black;
+}
+.signup-page-btn{
+    width: 150px;
+    align-self: center;
+}
+.signup-page-btn:hover{
+    width: 165px;
+}
+
+.playlist-song-detail{
+    margin-left: 25px;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+.playlist-song-detail:hover{
+    background-color: #393939;
+}
+
+.profile-detail-button{
+    background-color: #282828;
+    cursor: pointer;
+}
+.profile-detail-button:hover{
+    background-color: rgba(89, 89, 89,0.6);
+}
