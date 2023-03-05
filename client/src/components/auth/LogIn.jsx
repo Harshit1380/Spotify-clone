@@ -12,7 +12,8 @@ const LogIn = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        if(localStorage.getItem("profile")) navigate('/');
+        // if(localStorage.getItem("profile")) navigate('/');
+        localStorage.clear();
     },[]);
     const handleSubmit = async (e) => {
         if(user.email && user.password){

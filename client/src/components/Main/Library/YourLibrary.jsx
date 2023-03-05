@@ -6,6 +6,8 @@ import {Pause,PlayArrow} from '@mui/icons-material';
 import { setActiveBody } from '../../../Actions/activeBody';
 import { useDispatch, useSelector } from 'react-redux';
 
+const defaultImage = "https://img.freepik.com/premium-vector/favourite-playlist-icon-songs-music-player-playlist-logo-vector-ui-icon-neumorphic-ui-ux-white-user-interface-web-button_399089-2894.jpg?w=2000";
+
 const YourLibrary = () => {
     const [isPlaying,setIsPlaying] = useState();
     const user = useSelector((state) => state?.activeUser?.result);
@@ -18,7 +20,7 @@ const YourLibrary = () => {
     useEffect(()=>{
         dispatch(setActiveBody("Your Library"));
     },[]);
-
+    console.log(user);
     return (
     <Box sx={{width:'100%',flex: '1 1 auto',background: 'linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(20,23,26,1) 100%)',minHeight: '442px',height: '80.45vh',display: 'block',overflowY: 'scroll'}}>
         <Typography variant='h5' fontFamily= 'Hanken Grotesk , sans-serif' margin='25px 25px 25px 30px' fontWeight='700' color='#fff'>Playlists</Typography>
@@ -37,7 +39,7 @@ const YourLibrary = () => {
                 </Link>
             </Box>
             {user?.playlists.map((playlist) => (
-                <PlaylistCard key={playlist.key} title={playlist.title} img_src={playlist.img_src} subtitle={playlist.subtitle} />
+                <PlaylistCard key={playlist?.key} title={playlist?.name} img_src={playlist?.img_src || defaultImage} subtitle={user?.username} />
             ))}
         </Box>
     </Box>

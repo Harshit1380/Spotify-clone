@@ -25,9 +25,6 @@ const Profileutton = () => {
         <span style={{display: 'flex'}}>{navbar.isOpen ? <ArrowDropUp />:<ArrowDropDown />}</span>
       </button>
       <div style={{zIndex: 99,position: 'absolute',width: '200px',backgroundColor:'#282828',right: '50px',top:'50px',borderRadius: '5px',opacity: navbar.isOpen,display: navbar.isOpen===1 ? 'flex':'none',transition: 'all 0.3s',flexDirection: 'column'}}>
-        <button className='profile-detail-button' onClick={()=>navigate('/account')} style={{fontWeight: '600',color: '#dbdbdb',width: '100%',border: 'none',height: '40px'}}>Account</button>
-        <button className='profile-detail-button' onClick={()=>navigate('/profile')} style={{fontWeight: '600',color: '#dbdbdb',width: '100%',border: 'none',height: '40px'}}>Profile</button>
-        <button className='profile-detail-button' onClick={()=>navigate('/upgrade')} style={{fontWeight: '600',color: '#dbdbdb',width: '100%',border: 'none',height: '40px'}}>Upgrade to Premium</button>
         <button className='profile-detail-button' onClick={()=>{localStorage.clear();dispatch(setUser(null));navigate('/');}} style={{fontWeight: '600',color: '#dbdbdb',width: '100%',border: 'none',height: '40px'}}>Log out</button>
       </div>
     </div>

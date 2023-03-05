@@ -17,7 +17,7 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         if(user.email && user.password && user.confirmPassword && user.username){
             e.preventDefault();
-            dispatch(signUp);
+            dispatch(signUp(user));
             navigate('/');
         }
     }

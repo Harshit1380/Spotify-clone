@@ -43,9 +43,6 @@ const NavBar = () => {
               </Stack>}
         </Stack>
         <Stack direction='row' sx={{alignItems: 'center',pr: 3,mr: '25px'}}>
-          {(user && !(activeBody === 'Search' || activeBody === 'Your Library')) && <button className='upgrade'>
-            <Typography sx={{color:'#fff', fontWeight:'600', fontSize:'14px'}}>Upgrade</Typography>
-          </button>}
           {user && <ProfileButton />}
           {!user && 
             <button className='sign-up' onClick={()=>navigate('/signup')}>

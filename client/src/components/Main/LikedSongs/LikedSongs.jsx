@@ -9,6 +9,7 @@ import { setActiveBody } from '../../../Actions/activeBody';
 const color1 = 'rgb(21,21,80)';
 const color4 = 'rgb(18,18,60)';
 const color3 = 'rgb(45,45,160)';
+const likedSongsImg = "https://i1.sndcdn.com/artworks-y6qitUuZoS6y8LQo-5s2pPA-t500x500.jpg";
 
 const LikedSongs = () => {
     const user = useSelector((state) => state?.activeUser?.result);
@@ -30,29 +31,14 @@ const LikedSongs = () => {
         </Box>
     );
   return (
-    <Box sx={{overflowY: 'scroll'}}>
+    <Box sx={{overflowY: 'scroll',height: '82vh'}}>
         <Box sx={{background: `linear-gradient(0deg, ${color1} 0%, ${color3} 100%)`,display: 'flex',flexDirection: 'row',alignItems: 'flex-end',padding: '25px 30px',flex: '0 0 250px'}}>
             <Box height={{sm: '196px',md: '236px'}} width={{sm: '196px',md: '236px'}} sx={{display: 'flex',flexWrap: 'wrap',boxShadow: `0px 0px 20px ${color4}`}}>
                 <img 
-                    style={{flex: '1 1',minHeight:'98px',maxHeight: '118px',minWidth:'98px',maxWidth: '118px'}}
-                    src={songs[0]?.track?.images?.coverart || songs[0]?.images}
+                    src={likedSongsImg}
                     alt='cover'
+                    style={{position:'center',flex: '1 1',height:{sm: '196px',md: '236px'},width:{sm: '196px',md: '236px'}}}
                 />
-                {songs.length>3 && <img 
-                    style={{flex: '1 1',minHeight:'98px',maxHeight: '118px',minWidth:'98px',maxWidth: '118px'}}
-                    src={songs[1]?.track?.images?.coverart || songs[1]?.images}
-                    alt='cover'
-                />}
-                {songs.length>3 && <img 
-                    style={{flex: '1 1',minHeight:'98px',maxHeight: '118px',minWidth:'98px',maxWidth: '118px'}}
-                    src={songs[2]?.track?.images?.coverart || songs[2]?.images}
-                    alt='cover'
-                />}
-                {songs.length>3 && <img 
-                    style={{flex: '1 1',minHeight:'98px',maxHeight: '118px',minWidth:'98px',maxWidth: '118px'}}
-                    src={songs[3]?.track?.images?.coverart || songs[3]?.images}
-                    alt='cover'
-                />}
             </Box>
             <Box sx={{color: 'white',marginLeft: '20px'}}>
                 <Typography variant='subtitle2' sx={{fontWeight: 600}}>PLAYLIST</Typography>
@@ -78,7 +64,7 @@ const LikedSongs = () => {
             </Stack>
             <hr style={{width: '95%',size: '1px',border: '0.5px solid #212224',alignSelf: 'center',marginBottom: '10px',margin: '0 auto'}} />
         </Box>
-        <Stack sx={{backgroundColor: "#121212",padding: '0 10px',overflow: 'visible'}}>
+        <Stack sx={{backgroundColor: "#121212",padding: '0 10px',overflow: 'visible',minHeight:'220px'}}>
             {songs.map((song,i)=>(
                 <PlaylistSongDetail key={song?.key} song={song} i={i} playlist={songs} />
             ))}

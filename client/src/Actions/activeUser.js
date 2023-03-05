@@ -6,7 +6,7 @@ export const signUp = (formData) => async (dispatch) => {
         dispatch({type: "auth",payload: data});
     } catch (error) {
         console.log(error);
-    }
+    } 
 }
 
 export const signIn = (formData) => async (dispatch) => {
